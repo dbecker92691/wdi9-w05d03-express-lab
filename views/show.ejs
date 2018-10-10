@@ -8,5 +8,10 @@
 </head>
 <body>
     
+    <% for(let key in bands) { %>
+        <p><%= key %> - <%= bands[key] %></p>
+
+    <% } %>
+        <button href='/bands'>Bands Index</button>
 </body>
 </html>
