@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
 const bandsController = require('./controller/bands-controler')
+const methodOverride = require('method-override')
 
-
-app.use('/',bandsController);
+app.use(methodOverride('_method'));
+app.use('/bands',bandsController);
 
 
 

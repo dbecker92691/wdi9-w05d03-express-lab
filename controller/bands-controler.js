@@ -4,26 +4,27 @@ const Bands = require('../model/bands');
 
 
 
+
+
+
 router.get('/', (req, res) => {
-    res.send('This is the bands app')
-})
-
-
-router.get('/bands', (req, res) => {
     res.render('index.ejs', {
         bands: Bands
     })
 })
 
 
-router.get('/bands/:id', (req, res) => {
+router.get('/:id', (req, res) => {
     res.render('show.ejs', {
         bands: Bands[req.params.id]
     })
 })
 
 
-
+router.delete('/:id', (req, res) => {
+    Bands.splice(req.params.id);
+    res.redirect('/bands');
+})
 
 
 
