@@ -1,19 +1,9 @@
 const express = require('express');
 const app = express();
-const Bands = require('./model/bands');
+const bandsController = require('./controller/bands-controler')
 
 
-app.get('/', (req, res) => {
-    res.send('This is the bands app')
-})
-
-
-app.get('/bands', (req, res) => {
-    res.render('index.ejs', {
-        bands: Bands
-    })
-})
-
+app.use('/',bandsController);
 
 
 
